@@ -1,4 +1,8 @@
 {
-  "functions": { "src/*.ts": { "runtime": "nodejs18.x" } },
+  "functions": {
+    "api/*.ts": {
+      "runtime": "nodejs18.x"
+    }
+  },
   "ignoreCommand": "bash ./vercel-ignore.sh"
 }
