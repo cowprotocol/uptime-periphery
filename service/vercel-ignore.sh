@@ -13,7 +13,7 @@ fi
 
 # Only build when router-related files changed
 if git diff --name-only "$PREV" "$CURR" -- \
-  | grep -E '^(api/|vercel\.json|package\.json)'; then
+    | grep -E '^(api/|service/api/|vercel\.json|package\.json|service/vercel\.json|service/package\.json|vercel-ignore\.sh)'; then
   echo "Router files changed; allow build"
   exit 1
 else
