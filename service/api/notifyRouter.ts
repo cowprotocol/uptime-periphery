@@ -1,28 +1,3 @@
-// Router secret: Used to authenticate requests to the router to secure the hook
-const ROUTER_SECRET = process.env.ROUTER_SECRET;
-
-// Telegram bot's token for the alerts
-const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN!;
-
-// NEAR Telegram chat IDs
-const TELEGRAM_CHAT_NEAR = process.env.TELEGRAM_CHAT_NEAR;
-
-// Assert environment variables are set
-if (!ROUTER_SECRET || !TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_NEAR) {
-  throw new Error(
-    "Missing environment variables: ROUTER_SECRET, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_NEAR"
-  );
-}
-
-// Map by endpoint name prefix to Telegram chat ID
-const NAME_PREFIX_TO_TELEGRAM_CHAT_ID: Record<
-  string,
-  string | string[] | undefined
-> = {
-  "Bridging - Near": TELEGRAM_CHAT_NEAR,
-  "TEST - Intentional Failure": TELEGRAM_CHAT_NEAR, // For testing. Remove after.
-};
-
 /**
  * Send a message to a Telegram chat
  *
@@ -70,8 +45,33 @@ export default {
    */
   async fetch(request: Request) {
     try {
+      // Router secret: Used to authenticate requests to the router to secure the hook
+      const routerSecret = process.env.ROUTER_SECRET;
+
+      // Telegram bot's token for the alerts
+      const telegramBotToken = process.env.TELEGRAM_BOT_TOKEN!;
+
+      // NEAR Telegram chat IDs
+      const telegramChatNear = process.env.TELEGRAM_CHAT_NEAR;
+
+      // Assert environment variables are set
+      if (!routerSecret || !telegramBotToken || !telegramChatNear) {
+        throw new Error(
+          "Missing environment variables: ROUTER_SECRET, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_NEAR"
+        );
+      }
+
+      // Map by endpoint name prefix to Telegram chat ID
+      const NAME_PREFIX_TO_TELEGRAM_CHAT_ID: Record<
+        string,
+        string | string[] | undefined
+      > = {
+        "Bridging - Near": telegramChatNear,
+        "TEST - Intentional Failure": telegramChatNear, // For testing. Remove after.
+      };
+
       const url = new URL(request.url);
-      if (url.searchParams.get("key") !== ROUTER_SECRET)
+      if (url.searchParams.get("key") !== routerSecret)
         return new Response("unauthorized", { status: 401 });
 
       const payload = await request.json().catch(() => ({} as any));
@@ -102,9 +102,7 @@ export default {
       await Promise.all(
         targets
           .filter(Boolean)
-          .map((chatId) =>
-            sendTelegramMessage(TELEGRAM_BOT_TOKEN, chatId!, msg)
-          )
+          .map((chatId) => sendTelegramMessage(telegramBotToken, chatId!, msg))
       );
 
       return new Response("ok");
