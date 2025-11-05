@@ -1,7 +1,7 @@
-url: https://this-url-does-not-exist-12345678.com
-status: down
-code: 0
-responseTime: 0
-lastUpdated: 2025-11-05T22:14:32.290Z
+url: google.com
+status: up
+code: 200
+responseTime: 99
+lastUpdated: 2025-11-05T22:27:50.252Z
 startTime: 2025-11-05T17:37:25.867Z
 generator: Upptime <https://github.com/upptime/upptime>
