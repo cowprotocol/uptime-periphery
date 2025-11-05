@@ -1,6 +1,9 @@
 owner: cowprotocol
 repo: uptime-periphery
 
+assignees:
+  - cowprotocol/frontend
+
 notifications:
   - type: slack
     webhook-url: $SLACK_WEBHOOK_URL
@@ -9,26 +12,17 @@ sites:
   - name: TEST - Intentional Failure (Remove After Testing)
     url: https://this-url-does-not-exist-12345678.com
     maxResponseTime: 5000
-    notifications:
-      - type: telegram
-        chat-id: $TELEGRAM_CHAT_ID_NEAR
-        bot-token: $TELEGRAM_BOT_TOKEN
 
-  - name: Bridging - Near/1Click/Tokens
+  - name: Bridging - Near's 1Click - Get tokens
     url: https://1click.chaindefuser.com/v0/tokens
-    notifications:
-      - type: telegram
-        chat-id: $TELEGRAM_CHAT_ID_NEAR
-        bot-token: $TELEGRAM_BOT_TOKEN
+    icon: https://www.near.org/favicon.ico
 
-  - name: Bridging - Near/1Click/Quote
+  - name: Bridging - Near's 1Click - Get Quote
     method: POST
     url: https://1click.chaindefuser.com/v0/quote
+    icon: https://www.near.org/favicon.ico
     headers: ["Content-Type: application/json"]
-    notifications:
-      - type: telegram
-        chat-id: $TELEGRAM_CHAT_ID_NEAR
-        bot-token: $TELEGRAM_BOT_TOKEN
+
     body: |
       {
         "dry": false,
@@ -57,5 +51,3 @@ status-website:
       href: /
     - title: GitHub
       href: https://github.com/$OWNER/$REPO
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
