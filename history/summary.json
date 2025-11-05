@@ -1,5 +1,25 @@
 [
   {
+    "name": "TEST - Intentional Failure (Remove After Testing)",
+    "url": "https://this-url-does-not-exist-12345678.com",
+    "icon": "https://icons.duckduckgo.com/ip3/this-url-does-not-exist-12345678.com.ico",
+    "slug": "test-intentional-failure-remove-after-testing",
+    "status": "down",
+    "uptime": "0.00%",
+    "uptimeDay": "0.00%",
+    "uptimeWeek": "0.00%",
+    "uptimeMonth": "0.00%",
+    "uptimeYear": "0.00%",
+    "time": 0,
+    "timeDay": 0,
+    "timeWeek": 0,
+    "timeMonth": 0,
+    "timeYear": 0,
+    "dailyMinutesDown": {
+      "2025-11-05": 7
+    }
+  },
+  {
     "name": "Bridging - Near/1Click/Tokens",
     "url": "https://1click.chaindefuser.com/v0/tokens",
     "icon": "https://icons.duckduckgo.com/ip3/1click.chaindefuser.com.ico",
@@ -23,11 +43,11 @@
     "icon": "https://icons.duckduckgo.com/ip3/1click.chaindefuser.com.ico",
     "slug": "bridging-near-1-click-quote",
     "status": "up",
-    "uptime": "7.05%",
-    "uptimeDay": "7.05%",
-    "uptimeWeek": "7.05%",
-    "uptimeMonth": "7.05%",
-    "uptimeYear": "7.05%",
+    "uptime": "38.17%",
+    "uptimeDay": "38.17%",
+    "uptimeWeek": "38.17%",
+    "uptimeMonth": "38.17%",
+    "uptimeYear": "38.17%",
     "time": 3299,
     "timeDay": 3299,
     "timeWeek": 3299,
