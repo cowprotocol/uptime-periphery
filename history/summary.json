@@ -16,7 +16,7 @@
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2025-11-05": 138
+      "2025-11-05": 238
     }
   },
   {
@@ -42,17 +42,19 @@
     "url": "https://1click.chaindefuser.com/v0/quote",
     "icon": "https://www.near.org/favicon.ico",
     "slug": "bridging-near-s-1-click-get-quote",
-    "status": "up",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 0,
-    "timeDay": 0,
-    "timeWeek": 0,
-    "timeMonth": 0,
-    "timeYear": 0,
-    "dailyMinutesDown": {}
+    "status": "down",
+    "uptime": "99.95%",
+    "uptimeDay": "99.95%",
+    "uptimeWeek": "99.95%",
+    "uptimeMonth": "99.95%",
+    "uptimeYear": "99.95%",
+    "time": 3191,
+    "timeDay": 3191,
+    "timeWeek": 3191,
+    "timeMonth": 3191,
+    "timeYear": 3191,
+    "dailyMinutesDown": {
+      "2025-11-05": 0
+    }
   }
 ]
