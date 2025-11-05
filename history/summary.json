@@ -22,19 +22,19 @@
     "url": "https://1click.chaindefuser.com/v0/quote",
     "icon": "https://icons.duckduckgo.com/ip3/1click.chaindefuser.com.ico",
     "slug": "bridging-near-1-click-quote",
-    "status": "down",
-    "uptime": "8.10%",
-    "uptimeDay": "8.10%",
-    "uptimeWeek": "8.10%",
-    "uptimeMonth": "8.10%",
-    "uptimeYear": "8.10%",
-    "time": 3288,
-    "timeDay": 3288,
-    "timeWeek": 3288,
-    "timeMonth": 3288,
-    "timeYear": 3288,
+    "status": "up",
+    "uptime": "7.05%",
+    "uptimeDay": "7.05%",
+    "uptimeWeek": "7.05%",
+    "uptimeMonth": "7.05%",
+    "uptimeYear": "7.05%",
+    "time": 3299,
+    "timeDay": 3299,
+    "timeWeek": 3299,
+    "timeMonth": 3299,
+    "timeYear": 3299,
     "dailyMinutesDown": {
-      "2025-11-05": 59
+      "2025-11-05": 69
     }
   }
 ]
