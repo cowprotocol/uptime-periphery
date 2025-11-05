@@ -10,7 +10,7 @@ notifications:
 
 sites:
   - name: TEST - Intentional Failure (Remove After Testing)
-    url: https://this-url-does-not-exist-12345678.com
+    url: google.com
     maxResponseTime: 5000
 
   - name: Bridging - Near's 1Click - Get tokens
