@@ -48,15 +48,12 @@ export default {
     try {
       // Router secret: Used to authenticate requests to the router to secure the hook
       const routerSecret = process.env.ROUTER_SECRET;
-      console.log("routerSecret", routerSecret);
 
       // Telegram bot's token for the alerts
       const telegramBotToken = process.env.TELEGRAM_BOT_TOKEN!;
-      console.log("telegramBotToken", telegramBotToken);
 
-      // NEAR Telegram chat IDs
+      // Telegram channels
       const telegramChatNear = process.env.TELEGRAM_CHAT_NEAR;
-      console.log("telegramChatNear", telegramChatNear);
 
       // Assert environment variables are set
       if (!routerSecret || !telegramBotToken || !telegramChatNear) {
