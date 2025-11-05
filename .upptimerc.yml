@@ -1,28 +1,36 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+owner: cowprotocol
+repo: uptime-periphery
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
-  - name: IPv6 test
-    url: forwardemail.net
-    port: 80
-    check: "tcp-ping"
-    ipv6: true
+  - name: Bridging - Near/1Click/Tokens
+    url: https://1click.chaindefuser.com/v0/tokens
+
+  - name: Bridging - Near/1Click/Quote
+    method: POST
+    url: https://1click.chaindefuser.com/v0/quote
+    headers: ["Content-Type: application/json"]
+    body: |
+      {
+        "dry": false,
+        "swapType": "EXACT_INPUT",
+        "slippageTolerance": 100,
+        "originAsset": "nep141:arb-0xaf88d065e77c8cc2239327c5edb3a432268e5831.omft.near",
+        "depositType": "ORIGIN_CHAIN",
+        "destinationAsset": "nep141:base-0x833589fcd6edb6e08f4c7c32d4f71b54bda02913.omft.near",
+        "amount": "3241870412",
+        "refundTo": "0x79063d9173C09887d536924E2F6eADbaBAc099f5",
+        "refundType": "ORIGIN_CHAIN",
+        "recipient": "0x79063d9173C09887d536924E2F6eADbaBAc099f5",
+        "recipientType": "DESTINATION_CHAIN",
+        "deadline": "2030-01-01T00:00:00Z"
+      }
 
 status-website:
   # Add your custom domain name, or remove the `cname` line if you don't have a domain
   # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
+  cname: periphery.status.cow.fi
   # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
+  logoUrl: https://raw.githubusercontent.com/uptime-periphery/master/assets/cow-logo.png
   name: Upptime
   introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
   introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
@@ -31,6 +39,5 @@ status-website:
       href: /
     - title: GitHub
       href: https://github.com/$OWNER/$REPO
-
 # Upptime also supports notifications, assigning issues, and more
 # See https://upptime.js.org/docs/configuration
