@@ -158,7 +158,8 @@ export default {
 
       // If no matching route found, skip notification silently
       if (!match) {
-        return new Response("no route configured - skipping", { status: 204 });
+        console.log("No route configured for site:", siteName);
+        return new Response(null, { status: 204 });
       }
 
       const siteEsc = escapeMdV2(siteName);
