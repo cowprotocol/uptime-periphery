@@ -12,7 +12,7 @@ Assuming the [.upptimerc.yml](../.upptimerc.yml) is configured with a site whose
   -d '{"site":"TEST - Intentional Failure","status":"down"}'
 ```
 
-### How to add a new notification channel
+## How to add a new notification channel
 If there's a site whose status needs to be reported to a new channel. 
 
 1. Create a new Telegram channel for the notifications. Add anyone who needs to be notified to the channel.
@@ -21,3 +21,7 @@ If there's a site whose status needs to be reported to a new channel.
 4. Create a new site. Make sure the name starts with the a given text (let's call this the `prefix`).
 5. Add the `prefix` to the `sitePrefixToTelegramId` record in the [notifyRouter.ts](api/notifyRouter.ts) file, and map it to the Telegram Chat ID you got in step 2.
 6. Deploy the changes to the Vercel app.
+
+NOTIFICATION_CUSTOM_WEBHOOK=true
+
+NOTIFICATION_CUSTOM_WEBHOOK_URL=https://uptime-periphery.vercel.app/api/upptime?key=cow-upptime-xyz

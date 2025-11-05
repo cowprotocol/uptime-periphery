@@ -9,10 +9,6 @@ notifications:
     webhook-url: $SLACK_WEBHOOK_URL
 
 sites:
-  - name: TEST - Intentional Failure (Remove After Testing)
-    url: https://this-url-does-not-exist-12345678.com
-    maxResponseTime: 5000
-
   - name: Bridging - Near's 1Click - Get tokens
     url: https://1click.chaindefuser.com/v0/tokens
     icon: https://www.near.org/favicon.ico
