@@ -1,22 +1,22 @@
 [
   {
     "name": "TEST - Intentional Failure (Remove After Testing)",
-    "url": "https://this-url-does-not-exist-12345678.com",
-    "icon": "https://icons.duckduckgo.com/ip3/this-url-does-not-exist-12345678.com.ico",
+    "url": "http://google.com/",
+    "icon": "https://icons.duckduckgo.com/ip3/google.com.ico",
     "slug": "test-intentional-failure-remove-after-testing",
-    "status": "down",
+    "status": "up",
     "uptime": "0.00%",
     "uptimeDay": "0.00%",
     "uptimeWeek": "0.00%",
     "uptimeMonth": "0.00%",
     "uptimeYear": "0.00%",
-    "time": 0,
-    "timeDay": 0,
-    "timeWeek": 0,
-    "timeMonth": 0,
-    "timeYear": 0,
+    "time": 74,
+    "timeDay": 74,
+    "timeWeek": 74,
+    "timeMonth": 74,
+    "timeYear": 74,
     "dailyMinutesDown": {
-      "2025-11-05": 274
+      "2025-11-05": 278
     }
   },
   {
@@ -43,11 +43,11 @@
     "icon": "https://www.near.org/favicon.ico",
     "slug": "bridging-near-s-1-click-get-quote",
     "status": "up",
-    "uptime": "73.95%",
-    "uptimeDay": "73.95%",
-    "uptimeWeek": "73.95%",
-    "uptimeMonth": "73.95%",
-    "uptimeYear": "73.95%",
+    "uptime": "75.11%",
+    "uptimeDay": "75.11%",
+    "uptimeWeek": "75.11%",
+    "uptimeMonth": "75.11%",
+    "uptimeYear": "75.11%",
     "time": 3252,
     "timeDay": 3252,
     "timeWeek": 3252,
