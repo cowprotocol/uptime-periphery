@@ -66,7 +66,7 @@ export default {
       }
 
       // Map by endpoint name prefix to Telegram chat ID
-      const NAME_PREFIX_TO_TELEGRAM_CHAT_ID: Record<
+      const sitePrefixToTelegramId: Record<
         string,
         string | string[] | undefined
       > = {
@@ -76,7 +76,7 @@ export default {
 
       const url = new URL(request.url);
       if (url.searchParams.get("key") !== routerSecret)
-        return new Response("unauthorized", { status: 401 });
+        return new Response("Not Authorized", { status: 401 });
 
       const payload = await request.json().catch(() => ({} as any));
       const textPayload =
@@ -89,8 +89,8 @@ export default {
         /(^|>)\s*(?<name>[^<(]+)\s*\(/.exec(textPayload)?.groups?.name ||
         "Unknown Site";
 
-      const match = Object.entries(NAME_PREFIX_TO_TELEGRAM_CHAT_ID).find(
-        ([k]) => siteName.startsWith(k)
+      const match = Object.entries(sitePrefixToTelegramId).find(([k]) =>
+        siteName.startsWith(k)
       )?.[1];
 
       // If no matching route found, skip notification silently
