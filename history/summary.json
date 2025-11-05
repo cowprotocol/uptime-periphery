@@ -16,45 +16,43 @@
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2025-11-05": 7
+      "2025-11-05": 138
     }
   },
   {
-    "name": "Bridging - Near/1Click/Tokens",
+    "name": "Bridging - Near's 1Click - Get tokens",
     "url": "https://1click.chaindefuser.com/v0/tokens",
-    "icon": "https://icons.duckduckgo.com/ip3/1click.chaindefuser.com.ico",
-    "slug": "bridging-near-1-click-tokens",
+    "icon": "https://www.near.org/favicon.ico",
+    "slug": "bridging-near-s-1-click-get-tokens",
     "status": "up",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 275,
-    "timeDay": 275,
-    "timeWeek": 275,
-    "timeMonth": 275,
-    "timeYear": 275,
+    "time": 153,
+    "timeDay": 153,
+    "timeWeek": 153,
+    "timeMonth": 153,
+    "timeYear": 153,
     "dailyMinutesDown": {}
   },
   {
-    "name": "Bridging - Near/1Click/Quote",
+    "name": "Bridging - Near's 1Click - Get Quote",
     "url": "https://1click.chaindefuser.com/v0/quote",
-    "icon": "https://icons.duckduckgo.com/ip3/1click.chaindefuser.com.ico",
-    "slug": "bridging-near-1-click-quote",
+    "icon": "https://www.near.org/favicon.ico",
+    "slug": "bridging-near-s-1-click-get-quote",
     "status": "up",
-    "uptime": "38.17%",
-    "uptimeDay": "38.17%",
-    "uptimeWeek": "38.17%",
-    "uptimeMonth": "38.17%",
-    "uptimeYear": "38.17%",
-    "time": 3299,
-    "timeDay": 3299,
-    "timeWeek": 3299,
-    "timeMonth": 3299,
-    "timeYear": 3299,
-    "dailyMinutesDown": {
-      "2025-11-05": 69
-    }
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 0,
+    "timeDay": 0,
+    "timeWeek": 0,
+    "timeMonth": 0,
+    "timeYear": 0,
+    "dailyMinutesDown": {}
   }
 ]
