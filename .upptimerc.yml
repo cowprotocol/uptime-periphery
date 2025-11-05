@@ -1,14 +1,26 @@
 owner: cowprotocol
 repo: uptime-periphery
 
+notifications:
+  - type: slack
+    webhook-url: $SLACK_WEBHOOK_URL
+
 sites:
   - name: Bridging - Near/1Click/Tokens
     url: https://1click.chaindefuser.com/v0/tokens
+    notifications:
+      - type: telegram
+        chat-id: $TELEGRAM_CHAT_ID_NEAR
+        bot-token: $TELEGRAM_BOT_TOKEN
 
   - name: Bridging - Near/1Click/Quote
     method: POST
     url: https://1click.chaindefuser.com/v0/quote
     headers: ["Content-Type: application/json"]
+    notifications:
+      - type: telegram
+        chat-id: $TELEGRAM_CHAT_ID_NEAR
+        bot-token: $TELEGRAM_BOT_TOKEN
     body: |
       {
         "dry": false,
@@ -26,14 +38,12 @@ sites:
       }
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
   cname: periphery.status.cow.fi
-  # baseUrl: /your-repo-name
+  baseUrl: /
   logoUrl: https://raw.githubusercontent.com/uptime-periphery/master/assets/cow-logo.png
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  name: Upptime for periphery services
+  introTitle: "**Upptime** for periphery services of CoW Protocol"
+  introMessage: This is a status page for periphery services of CoW Protocol.
   navbar:
     - title: Status
       href: /
