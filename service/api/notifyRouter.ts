@@ -26,6 +26,72 @@ async function sendTelegramMessage(
 }
 
 /**
+ * Send an error notification to Slack
+ *
+ * @param webhookUrl Slack webhook URL
+ * @param error Error object or message
+ */
+async function sendSlackErrorNotification(webhookUrl: string, error: any) {
+  const errorMessage = error?.message || error?.toString() || "Unknown error";
+  const errorStack = error?.stack || "No stack trace available";
+
+  const slackMessage = {
+    text: "🚨 Error executing the webhook for uptime-periphery",
+    blocks: [
+      {
+        type: "header",
+        text: {
+          type: "plain_text",
+          text: "🚨 Webhook Error - uptime-periphery",
+          emoji: true,
+        },
+      },
+      {
+        type: "section",
+        text: {
+          type: "mrkdwn",
+          text: "*Error executing the webhook for uptime-periphery*\n\nCheck logs in Vercel.\n\nProject: https://github.com/cowprotocol/uptime-periphery",
+        },
+      },
+      {
+        type: "section",
+        fields: [
+          {
+            type: "mrkdwn",
+            text: `*Error Message:*\n\`\`\`${errorMessage}\`\`\``,
+          },
+          {
+            type: "mrkdwn",
+            text: `*Timestamp:*\n${new Date().toISOString()}`,
+          },
+        ],
+      },
+      {
+        type: "section",
+        text: {
+          type: "mrkdwn",
+          text: `*Stack Trace:*\n\`\`\`${errorStack.slice(0, 2000)}\`\`\``,
+        },
+      },
+    ],
+  };
+
+  try {
+    const res = await fetch(webhookUrl, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(slackMessage),
+    });
+    if (!res.ok) {
+      console.error("Failed to send Slack notification:", await res.text());
+    }
+  } catch (slackError) {
+    // Don't throw on Slack notification failure - just log it
+    console.error("Error sending Slack notification:", slackError);
+  }
+}
+
+/**
  * Escape a string for MarkdownV2
  *
  * @param s String to escape
@@ -58,7 +124,7 @@ export default {
       // Assert environment variables are set
       if (!routerSecret || !telegramBotToken || !telegramChatNear) {
         throw new Error(
-          "4Missing environment variables: ROUTER_SECRET, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_NEAR"
+          "Missing environment variables: ROUTER_SECRET, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_NEAR"
         );
       }
 
@@ -108,7 +174,30 @@ export default {
 
       return new Response("ok");
     } catch (e: any) {
-      return new Response(`error: ${e?.message || e}`, { status: 500 });
+      console.error("error", e);
+
+      // Send error notification to Slack
+      const slackWebhookUrl = process.env.SLACK_ERROR_WEBHOOK_URL;
+      if (slackWebhookUrl) {
+        await sendSlackErrorNotification(slackWebhookUrl, e).catch(
+          (slackErr) => {
+            console.error(
+              "Failed to send Slack error notification:",
+              slackErr.message
+            );
+            console.error(slackErr);
+          }
+        );
+      } else {
+        console.warn("Missing environment variable: SLACK_ERROR_WEBHOOK_URL");
+      }
+
+      return new Response(
+        `Error handling request: ${
+          e?.message || e?.toString() || "Unknown error"
+        }`,
+        { status: 500 }
+      );
     }
   },
 };
