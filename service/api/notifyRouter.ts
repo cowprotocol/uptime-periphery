@@ -61,7 +61,7 @@ export default {
       // Assert environment variables are set
       if (!routerSecret || !telegramBotToken || !telegramChatNear) {
         throw new Error(
-          "3Missing environment variables: ROUTER_SECRET, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_NEAR"
+          "4Missing environment variables: ROUTER_SECRET, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_NEAR"
         );
       }
 
