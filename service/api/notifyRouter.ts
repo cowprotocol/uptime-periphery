@@ -110,7 +110,6 @@ export default {
    * @returns Response object
    */
   async fetch(request: Request) {
-    console.log("request", request);
     try {
       // Router secret: Used to authenticate requests to the router to secure the hook
       const routerSecret = process.env.ROUTER_SECRET;
@@ -142,6 +141,9 @@ export default {
         return new Response("Not Authorized", { status: 401 });
 
       const payload = await request.json().catch(() => ({} as any));
+
+      console.log("request payload:", payload);
+
       const textPayload =
         typeof payload === "string" ? payload : JSON.stringify(payload);
 
