@@ -14,7 +14,6 @@ async function sendTelegramMessage(
   const body = {
     chat_id: chatId,
     text,
-    parse_mode: "MarkdownV2",
     disable_web_page_preview: true,
   };
   const res = await fetch(url, {
@@ -145,17 +144,6 @@ function extractSiteName(message: string): string {
   return messageMatch?.groups?.name?.trim() || "Unknown Site";
 }
 
-/**
- * Escape a string for MarkdownV2
- *
- * @param s String to escape
- * @returns Escaped string
- */
-function escapeMdV2(s: string) {
-  // Minimal MarkdownV2 escaping for common symbols
-  return s.replace(/([_*\[\]()~`>#+\-=|{}.!\\])/g, "\\$1");
-}
-
 export default {
   /**
    * Handle the request to notify the Telegram chat
@@ -226,8 +214,8 @@ export default {
         return new Response(null, { status: 204 });
       }
 
-      // Format the message for Telegram (escape markdown and truncate if needed)
-      const telegramMessage = escapeMdV2(message.slice(0, 3500));
+      // Truncate message if needed (Telegram has a 4096 character limit)
+      const telegramMessage = message.slice(0, 4000);
 
       console.log("Sending to Telegram:", {
         siteName,
