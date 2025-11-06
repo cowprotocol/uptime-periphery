@@ -226,17 +226,22 @@ export default {
         return new Response(null, { status: 204 });
       }
 
-      const siteEsc = escapeMdV2(siteName);
-      const rawEsc = escapeMdV2(message.slice(0, 3500));
-      const msg = `🚨 *Upptime alert*\n• *Site:* ${siteEsc}\n• *Raw:* \`${rawEsc}\``;
+      // Format the message for Telegram (escape markdown and truncate if needed)
+      const telegramMessage = escapeMdV2(message.slice(0, 3500));
 
-      console.log("Sending to Telegram:", { siteName, targets: match });
+      console.log("Sending to Telegram:", {
+        siteName,
+        siteUrl,
+        targets: match,
+      });
 
       const targets = Array.isArray(match) ? match : [match];
       await Promise.all(
         targets
           .filter(Boolean)
-          .map((chatId) => sendTelegramMessage(telegramBotToken, chatId!, msg))
+          .map((chatId) =>
+            sendTelegramMessage(telegramBotToken, chatId!, telegramMessage)
+          )
       );
 
       return new Response("ok");
