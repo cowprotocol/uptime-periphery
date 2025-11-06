@@ -1,23 +1,42 @@
 [
   {
-    "name": "TEST - Intentional Failure 10",
-    "url": "https://this-url-does-not-exist-12345678410.com",
-    "icon": "https://icons.duckduckgo.com/ip3/this-url-does-not-exist-12345678410.com.ico",
-    "slug": "test-intentional-failure-10",
+    "name": "TEST - Intentional Failure 11",
+    "url": "https://this-url-does-not-exist-12345678411.com",
+    "icon": "https://icons.duckduckgo.com/ip3/this-url-does-not-exist-12345678411.com.ico",
+    "slug": "test-intentional-failure-11",
     "status": "down",
-    "uptime": "0.03%",
-    "uptimeDay": "0.03%",
-    "uptimeWeek": "0.03%",
-    "uptimeMonth": "0.03%",
-    "uptimeYear": "0.03%",
+    "uptime": "0.00%",
+    "uptimeDay": "0.00%",
+    "uptimeWeek": "0.00%",
+    "uptimeMonth": "0.00%",
+    "uptimeYear": "0.00%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2025-11-06": 4,
-      "2025-11-05": 8
+      "2025-11-06": 0
+    }
+  },
+  {
+    "name": "TEST - Intentional Failure 12",
+    "url": "https://this-url-does-not-exist-12345678412.com",
+    "icon": "https://icons.duckduckgo.com/ip3/this-url-does-not-exist-12345678412.com.ico",
+    "slug": "test-intentional-failure-12",
+    "status": "down",
+    "uptime": "0.00%",
+    "uptimeDay": "0.00%",
+    "uptimeWeek": "0.00%",
+    "uptimeMonth": "0.00%",
+    "uptimeYear": "0.00%",
+    "time": 0,
+    "timeDay": 0,
+    "timeWeek": 0,
+    "timeMonth": 0,
+    "timeYear": 0,
+    "dailyMinutesDown": {
+      "2025-11-06": 0
     }
   },
   {
@@ -31,11 +50,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 239,
-    "timeDay": 239,
-    "timeWeek": 239,
-    "timeMonth": 239,
-    "timeYear": 239,
+    "time": 260,
+    "timeDay": 260,
+    "timeWeek": 260,
+    "timeMonth": 260,
+    "timeYear": 260,
     "dailyMinutesDown": {}
   },
   {
@@ -44,16 +63,16 @@
     "icon": "https://www.near.org/favicon.ico",
     "slug": "bridging-near-s-1-click-get-quote",
     "status": "up",
-    "uptime": "86.17%",
-    "uptimeDay": "86.17%",
-    "uptimeWeek": "86.17%",
-    "uptimeMonth": "86.17%",
-    "uptimeYear": "86.17%",
-    "time": 3269,
-    "timeDay": 3269,
-    "timeWeek": 3269,
-    "timeMonth": 3269,
-    "timeYear": 3269,
+    "uptime": "86.66%",
+    "uptimeDay": "86.66%",
+    "uptimeWeek": "86.66%",
+    "uptimeMonth": "86.66%",
+    "uptimeYear": "86.66%",
+    "time": 3274,
+    "timeDay": 3274,
+    "timeWeek": 3274,
+    "timeMonth": 3274,
+    "timeYear": 3274,
     "dailyMinutesDown": {
       "2025-11-05": 35
     }
