@@ -92,6 +92,60 @@ async function sendSlackErrorNotification(webhookUrl: string, error: any) {
 }
 
 /**
+ * Extract the message from the Upptime webhook payload
+ *
+ * @param payload The webhook payload
+ * @returns The extracted message string
+ */
+function extractMessage(payload: unknown): string {
+  if (typeof payload === "string") {
+    return payload;
+  }
+
+  if (payload && typeof payload === "object") {
+    const payloadObj = payload as any;
+    if (payloadObj.data?.message) {
+      return payloadObj.data.message;
+    }
+    if (payloadObj.message) {
+      return payloadObj.message;
+    }
+  }
+
+  return JSON.stringify(payload);
+}
+
+/**
+ * Extract the URL from an Upptime alert message
+ *
+ * @param message The alert message
+ * @returns The extracted URL or null
+ */
+function extractUrl(message: string): string | null {
+  // Message format: "🟥 Site Name (https://example.com) is **down** : ..."
+  const urlMatch = /\((?<url>https?:\/\/[^)]+)\)/.exec(message);
+  return urlMatch?.groups?.url || null;
+}
+
+/**
+ * Extract the site name from an Upptime alert message
+ *
+ * @param message The alert message
+ * @returns The extracted site name
+ */
+function extractSiteName(message: string): string {
+  // First try to extract from JSON format
+  const jsonMatch = /"site(Name)?"\s*:\s*"(?<name>[^"]+)"/i.exec(message);
+  if (jsonMatch?.groups?.name) {
+    return jsonMatch.groups.name;
+  }
+
+  // Then try message format (with or without emoji)
+  const messageMatch = /^\s*(?<name>[^(]+?)\s*\(/.exec(message);
+  return messageMatch?.groups?.name?.trim() || "Unknown Site";
+}
+
+/**
  * Escape a string for MarkdownV2
  *
  * @param s String to escape
@@ -127,13 +181,13 @@ export default {
         );
       }
 
-      // Map by endpoint name prefix to Telegram chat ID
-      const sitePrefixToTelegramId: Record<
+      // Map by URL pattern to Telegram chat ID
+      const urlPatternToTelegramId: Record<
         string,
         string | string[] | undefined
       > = {
-        "Bridging - Near": telegramChatNear,
-        "TEST - Intentional Failure": telegramChatNear, // For testing. Remove after.
+        "www.near.org": telegramChatNear,
+        "this-url-does-not-exist": telegramChatNear, // For testing. Remove after.
       };
 
       const url = new URL(request.url);
@@ -141,32 +195,42 @@ export default {
         return new Response("Not Authorized", { status: 401 });
 
       const payload = await request.json().catch(() => ({} as any));
-
       console.log("request payload:", payload);
 
-      const textPayload =
-        typeof payload === "string" ? payload : JSON.stringify(payload);
+      // Extract and clean the message from the payload
+      const message = extractMessage(payload).replace(/^["']|["']$/g, "");
+      console.log("extracted message:", message);
 
-      // Try to extract a site name; fall back if not present
-      const siteName =
-        /"site(Name)?"\s*:\s*"(?<name>[^"]+)"/i.exec(textPayload)?.groups
-          ?.name ||
-        /(^|>)\s*(?<name>[^<(]+)\s*\(/.exec(textPayload)?.groups?.name ||
-        "Unknown Site";
+      // Extract site URL and name from the message
+      const siteUrl = extractUrl(message);
+      const siteName = extractSiteName(message);
 
-      const match = Object.entries(sitePrefixToTelegramId).find(([k]) =>
-        siteName.startsWith(k)
-      )?.[1];
+      console.log("extracted URL:", siteUrl);
+      console.log("extracted site name:", siteName);
+
+      // Find matching route based on URL
+      let match: string | string[] | undefined;
+      if (siteUrl) {
+        match = Object.entries(urlPatternToTelegramId).find(([pattern]) =>
+          siteUrl.includes(pattern)
+        )?.[1];
+      }
 
       // If no matching route found, skip notification silently
       if (!match) {
-        console.log("No route configured for site:", siteName);
+        console.log(
+          `No route configured for URL: ${siteUrl}. Available patterns: ${Object.keys(
+            urlPatternToTelegramId
+          ).join(", ")}`
+        );
         return new Response(null, { status: 204 });
       }
 
       const siteEsc = escapeMdV2(siteName);
-      const rawEsc = escapeMdV2(textPayload.slice(0, 3500));
+      const rawEsc = escapeMdV2(message.slice(0, 3500));
       const msg = `🚨 *Upptime alert*\n• *Site:* ${siteEsc}\n• *Raw:* \`${rawEsc}\``;
+
+      console.log("Sending to Telegram:", { siteName, targets: match });
 
       const targets = Array.isArray(match) ? match : [match];
       await Promise.all(
