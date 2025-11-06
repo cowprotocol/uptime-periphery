@@ -9,12 +9,8 @@ notifications:
     webhook-url: $SLACK_WEBHOOK_URL
 
 sites:
-  - name: TEST - Intentional Failure 11
-    url: https://this-url-does-not-exist-12345678411.com
-    maxResponseTime: 5000
-
-  - name: TEST - Intentional Failure 12
-    url: https://this-url-does-not-exist-12345678412.com
+  - name: TEST - Intentional Failure 13
+    url: https://this-url-does-not-exist-12345678413.com
     maxResponseTime: 5000
 
   - name: Bridging - Near's 1Click - Get tokens
