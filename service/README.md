@@ -22,7 +22,8 @@ If there's a site whose status needs to be reported to a new Telegram channel:
 4. Create a new site in [.upptimerc.yml](../.upptimerc.yml) with the URL you want to monitor.
 5. Add a URL pattern from that site to the `urlPatternToTelegramId` record in the [notifyRouter.ts](api/notifyRouter.ts) file, and map it to the Telegram Chat ID you got in step 3.
    - Example: For `https://1click.chaindefuser.com/v0/tokens`, use pattern `"1click.chaindefuser.com"`
-6. Deploy the changes to the Vercel app.
+6. Add the environment variable to the Vercel project.
+7. Deploy the changes to the Vercel app.
 
 ## Environment Variables
 
