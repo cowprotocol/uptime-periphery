@@ -1,4 +1,120 @@
 /**
+ * Required environment variable keys
+ */
+const REQUIRED_ENV_KEYS = [
+  "ROUTER_SECRET", // webhook auth secret
+  "TELEGRAM_BOT_TOKEN", // telegram bot token
+  "TELEGRAM_CHAT_NEAR", // Near alerts
+  "TELEGRAM_CHAT_BUNGEE", // Bungee alerts
+  "TELEGRAM_CHAT_ACROSS", // Across alerts
+  "TELEGRAM_CHAT_LIFI", // Lifi alerts
+] as const;
+
+type RequiredEnv = Record<(typeof REQUIRED_ENV_KEYS)[number], string>;
+
+/**
+ * Map Endpoint URL patterns to Telegram chat environment variables
+ */
+const URL_PATTERN_TO_ENV_KEY: Record<
+  string,
+  keyof RequiredEnv | Array<keyof RequiredEnv>
+> = {
+  "1click.chaindefuser.com": "TELEGRAM_CHAT_NEAR",
+  "backend.bungee.exchange": "TELEGRAM_CHAT_BUNGEE",
+};
+
+export default {
+  /**
+   * Handle the request to notify the Telegram chat
+   *
+   * @param request Request object
+   * @returns Response object
+   */
+  async fetch(request: Request) {
+    try {
+      // Get and validate required environment variables
+      const env = getRequiredEnv();
+
+      const url = new URL(request.url);
+      if (url.searchParams.get("key") !== env.ROUTER_SECRET)
+        return new Response("Not Authorized", { status: 401 });
+
+      const payload = await request.json().catch(() => ({} as any));
+      console.log("request payload:", payload);
+
+      // Extract and clean the message from the payload
+      const message = extractMessage(payload).replace(/^["']|["']$/g, "");
+      console.log("extracted message:", message);
+
+      // Extract site URL and name from the message
+      const siteUrl = extractUrl(message);
+      const siteName = extractSiteName(message);
+
+      console.log("extracted URL:", siteUrl);
+      console.log("extracted site name:", siteName);
+
+      // Find matching Telegram chat ID(s) based on URL
+      const chatIds = getTelegramChatId(siteUrl, env);
+
+      // If no matching route found, skip notification silently
+      if (!chatIds) {
+        console.log(
+          `No route configured for URL: ${siteUrl}. Available patterns: ${Object.keys(
+            URL_PATTERN_TO_ENV_KEY
+          ).join(", ")}`
+        );
+        return new Response(null, { status: 204 });
+      }
+
+      // Truncate message if needed (Telegram has a 4096 character limit)
+      const telegramMessage = message.slice(0, 4000);
+
+      console.log("Sending to Telegram:", {
+        siteName,
+        siteUrl,
+        targets: chatIds,
+      });
+
+      const targets = Array.isArray(chatIds) ? chatIds : [chatIds];
+      await Promise.all(
+        targets
+          .filter(Boolean)
+          .map((chatId) =>
+            sendTelegramMessage(env.TELEGRAM_BOT_TOKEN, chatId, telegramMessage)
+          )
+      );
+
+      return new Response("ok");
+    } catch (e: any) {
+      console.error("error", e);
+
+      // Send error notification to Slack
+      const slackWebhookUrl = process.env.SLACK_ERROR_WEBHOOK_URL;
+      if (slackWebhookUrl) {
+        await sendSlackErrorNotification(slackWebhookUrl, e).catch(
+          (slackErr) => {
+            console.error(
+              "Failed to send Slack error notification:",
+              slackErr.message
+            );
+            console.error(slackErr);
+          }
+        );
+      } else {
+        console.warn("Missing environment variable: SLACK_ERROR_WEBHOOK_URL");
+      }
+
+      return new Response(
+        `Error handling request: ${
+          e?.message || e?.toString() || "Unknown error"
+        }`,
+        { status: 500 }
+      );
+    }
+  },
+};
+
+/**
  * Send a message to a Telegram chat
  *
  * @param token Telegram bot's token
@@ -144,120 +260,46 @@ function extractSiteName(message: string): string {
   return messageMatch?.groups?.name?.trim() || "Unknown Site";
 }
 
-export default {
-  /**
-   * Handle the request to notify the Telegram chat
-   *
-   * @param request Request object
-   * @returns Response object
-   */
-  async fetch(request: Request) {
-    try {
-      // Router secret: Used to authenticate requests to the router to secure the hook
-      const routerSecret = process.env.ROUTER_SECRET;
+/**
+ * Validate and return required environment variables
+ *
+ * @returns The validated environment variables
+ * @throws Error if any required environment variable is missing
+ */
+function getRequiredEnv(): RequiredEnv {
+  const missing = REQUIRED_ENV_KEYS.filter((key) => !process.env[key]);
 
-      // Telegram bot's token for the alerts
-      const telegramBotToken = process.env.TELEGRAM_BOT_TOKEN!;
+  if (missing.length > 0) {
+    throw new Error(`Missing environment variables: ${missing.join(", ")}`);
+  }
 
-      // Telegram channels
-      const telegramChatNear = process.env.TELEGRAM_CHAT_NEAR;
+  return Object.fromEntries(
+    REQUIRED_ENV_KEYS.map((key) => [key, process.env[key]!])
+  ) as RequiredEnv;
+}
 
-      // Assert environment variables are set
-      if (!routerSecret || !telegramBotToken || !telegramChatNear) {
-        throw new Error(
-          "Missing environment variables: ROUTER_SECRET, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_NEAR"
-        );
-      }
+/**
+ * Get Telegram chat ID(s) for a given URL
+ *
+ * @param url The site URL from the alert
+ * @param env The environment variables object
+ * @returns The chat ID(s) or undefined if no match found
+ */
+function getTelegramChatId(
+  url: string | null,
+  env: RequiredEnv
+): string | string[] | undefined {
+  if (!url) return undefined;
 
-      // Map by URL pattern to Telegram chat ID
-      const urlPatternToTelegramId: Record<
-        string,
-        string | string[] | undefined
-      > = {
-        "www.near.org": telegramChatNear,
-        "this-url-does-not-exist": telegramChatNear, // For testing. Remove after.
-      };
+  const envKey = Object.entries(URL_PATTERN_TO_ENV_KEY).find(([pattern]) =>
+    url.includes(pattern)
+  )?.[1];
 
-      const url = new URL(request.url);
-      if (url.searchParams.get("key") !== routerSecret)
-        return new Response("Not Authorized", { status: 401 });
+  if (!envKey) return undefined;
 
-      const payload = await request.json().catch(() => ({} as any));
-      console.log("request payload:", payload);
+  if (Array.isArray(envKey)) {
+    return envKey.map((key) => env[key]);
+  }
 
-      // Extract and clean the message from the payload
-      const message = extractMessage(payload).replace(/^["']|["']$/g, "");
-      console.log("extracted message:", message);
-
-      // Extract site URL and name from the message
-      const siteUrl = extractUrl(message);
-      const siteName = extractSiteName(message);
-
-      console.log("extracted URL:", siteUrl);
-      console.log("extracted site name:", siteName);
-
-      // Find matching route based on URL
-      let match: string | string[] | undefined;
-      if (siteUrl) {
-        match = Object.entries(urlPatternToTelegramId).find(([pattern]) =>
-          siteUrl.includes(pattern)
-        )?.[1];
-      }
-
-      // If no matching route found, skip notification silently
-      if (!match) {
-        console.log(
-          `No route configured for URL: ${siteUrl}. Available patterns: ${Object.keys(
-            urlPatternToTelegramId
-          ).join(", ")}`
-        );
-        return new Response(null, { status: 204 });
-      }
-
-      // Truncate message if needed (Telegram has a 4096 character limit)
-      const telegramMessage = message.slice(0, 4000);
-
-      console.log("Sending to Telegram:", {
-        siteName,
-        siteUrl,
-        targets: match,
-      });
-
-      const targets = Array.isArray(match) ? match : [match];
-      await Promise.all(
-        targets
-          .filter(Boolean)
-          .map((chatId) =>
-            sendTelegramMessage(telegramBotToken, chatId!, telegramMessage)
-          )
-      );
-
-      return new Response("ok");
-    } catch (e: any) {
-      console.error("error", e);
-
-      // Send error notification to Slack
-      const slackWebhookUrl = process.env.SLACK_ERROR_WEBHOOK_URL;
-      if (slackWebhookUrl) {
-        await sendSlackErrorNotification(slackWebhookUrl, e).catch(
-          (slackErr) => {
-            console.error(
-              "Failed to send Slack error notification:",
-              slackErr.message
-            );
-            console.error(slackErr);
-          }
-        );
-      } else {
-        console.warn("Missing environment variable: SLACK_ERROR_WEBHOOK_URL");
-      }
-
-      return new Response(
-        `Error handling request: ${
-          e?.message || e?.toString() || "Unknown error"
-        }`,
-        { status: 500 }
-      );
-    }
-  },
-};
+  return env[envKey];
+}
