@@ -4,19 +4,19 @@
     "url": "https://1click.chaindefuser.com/v0/tokens",
     "icon": "https://www.near.org/favicon.ico",
     "slug": "bridging-near-s-1-click-get-tokens",
-    "status": "down",
-    "uptime": "99.97%",
-    "uptimeDay": "99.96%",
-    "uptimeWeek": "99.97%",
-    "uptimeMonth": "99.97%",
-    "uptimeYear": "99.97%",
-    "time": 907,
-    "timeDay": 4834,
-    "timeWeek": 907,
-    "timeMonth": 907,
-    "timeYear": 907,
+    "status": "up",
+    "uptime": "96.88%",
+    "uptimeDay": "95.20%",
+    "uptimeWeek": "96.88%",
+    "uptimeMonth": "96.88%",
+    "uptimeYear": "96.88%",
+    "time": 860,
+    "timeDay": 3291,
+    "timeWeek": 860,
+    "timeMonth": 860,
+    "timeYear": 860,
     "dailyMinutesDown": {
-      "2025-11-07": 1
+      "2025-11-07": 69
     }
   },
   {
@@ -25,18 +25,18 @@
     "icon": "https://www.near.org/favicon.ico",
     "slug": "bridging-near-s-1-click-get-quote",
     "status": "down",
-    "uptime": "98.35%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "98.35%",
-    "uptimeMonth": "98.35%",
-    "uptimeYear": "98.35%",
+    "uptime": "95.30%",
+    "uptimeDay": "95.23%",
+    "uptimeWeek": "95.30%",
+    "uptimeMonth": "95.30%",
+    "uptimeYear": "95.30%",
     "time": 3637,
     "timeDay": 6225,
     "timeWeek": 3637,
     "timeMonth": 3637,
     "timeYear": 3637,
     "dailyMinutesDown": {
-      "2025-11-07": 0,
+      "2025-11-07": 69,
       "2025-11-05": 35
     }
   }
