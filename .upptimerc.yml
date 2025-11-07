@@ -46,7 +46,7 @@ sites:
     icon: https://img.notionusercontent.com/s3/prod-files-secure%2F3ff6c9ca-a668-43fc-b125-7cac785409a3%2Fbefa5cd6-8537-43ee-868a-796111e9bfcb%2Fnew_(10).png/size/w=250?exp=1762607758&sig=nkhKAvPK1rpH7I4BZ5et6sSbNYSr4ZYm67KaZhK98S4&id=185818fd-2858-80d8-8fcc-d82b3b4adbf4&table=block
     headers:
       - "Referer: https://swap.cow.fi/"
-      - "affiliate": "609913096e1a3d62cecd0ffff47aa3e459eaedceb5fef75aad43e6cbff367039708902197e0b2b78b1d76cb0837ad0b318baedceb5fef75aad43e6cb"
+      - "affiliate: 609913096e1a3d62cecd0ffff47aa3e459eaedceb5fef75aad43e6cbff367039708902197e0b2b78b1d76cb0837ad0b318baedceb5fef75aad43e6cb"
 
 status-website:
   cname: periphery.status.cow.fi
