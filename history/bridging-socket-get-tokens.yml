@@ -1,7 +1,0 @@
-url: https://backend.bungee.exchange/api/v1/bungee-manual/dest-tokens?toChainId=42161&includeBridges=across%2Ccctp%2Cgnosis-native-bridge&fromChainId=1
-status: up
-code: 200
-responseTime: 1158
-lastUpdated: 2025-11-07T14:09:01.910Z
-startTime: 2025-11-07T14:09:00.747Z
-generator: Upptime <https://github.com/upptime/upptime>
