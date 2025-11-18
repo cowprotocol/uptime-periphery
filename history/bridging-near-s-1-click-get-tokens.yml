@@ -1,7 +1,7 @@
 url: https://1click.chaindefuser.com/v0/tokens
-status: up
-code: 200
-responseTime: 242
-lastUpdated: 2025-11-18T15:54:57.061Z
+status: down
+code: 500
+responseTime: 79
+lastUpdated: 2025-11-18T16:38:00.685Z
 startTime: 2025-11-05T19:48:35.546Z
 generator: Upptime <https://github.com/upptime/upptime>
