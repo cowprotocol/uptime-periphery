@@ -1,7 +1,7 @@
 url: https://1click.chaindefuser.com/v0/quote
-status: down
-code: 400
-responseTime: 298
-lastUpdated: 2026-01-15T13:05:39.854Z
+status: up
+code: 201
+responseTime: 5689
+lastUpdated: 2026-01-15T18:55:46.919Z
 startTime: 2025-11-05T19:48:36.066Z
 generator: Upptime <https://github.com/upptime/upptime>
