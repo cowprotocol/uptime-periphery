@@ -1,7 +1,7 @@
 url: https://barn.api.cow.fi/linea/api/v1/quote
-status: down
-code: 404
-responseTime: 496
-lastUpdated: 2026-05-29T13:12:31.809Z
+status: up
+code: 200
+responseTime: 569
+lastUpdated: 2026-05-29T14:11:23.907Z
 startTime: 2026-05-29T13:12:18.185Z
 generator: Upptime <https://github.com/upptime/upptime>
