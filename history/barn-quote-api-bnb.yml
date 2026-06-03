@@ -1,7 +1,7 @@
 url: https://barn.api.cow.fi/bnb/api/v1/quote
-status: down
-code: 502
-responseTime: 5457
-lastUpdated: 2026-06-03T12:32:20.816Z
+status: up
+code: 200
+responseTime: 480
+lastUpdated: 2026-06-03T14:10:50.741Z
 startTime: 2026-05-29T13:12:17.513Z
 generator: Upptime <https://github.com/upptime/upptime>
