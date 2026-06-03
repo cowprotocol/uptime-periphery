@@ -1,7 +1,7 @@
 url: https://bff.barn.cow.fi/42161/tokens/0x82aF49447D8a07e3bd95BD0d56f35241523fBab1/usdPrice
-status: up
-code: 200
-responseTime: 562
-lastUpdated: 2026-06-02T23:35:39.397Z
+status: down
+code: 0
+responseTime: 0
+lastUpdated: 2026-06-03T12:37:34.138Z
 startTime: 2026-05-29T13:12:39.125Z
 generator: Upptime <https://github.com/upptime/upptime>
