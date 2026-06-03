@@ -1,7 +1,7 @@
 url: https://barn.api.cow.fi/arbitrum_one/api/v1/quote
-status: down
-code: 502
-responseTime: 5302
-lastUpdated: 2026-06-03T12:30:26.709Z
+status: up
+code: 200
+responseTime: 454
+lastUpdated: 2026-06-03T14:10:47.104Z
 startTime: 2026-05-29T13:12:13.876Z
 generator: Upptime <https://github.com/upptime/upptime>
