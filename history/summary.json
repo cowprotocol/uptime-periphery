@@ -169,7 +169,7 @@
     "uptimeYear": "100.00%",
     "time": 1522,
     "timeDay": 1290,
-    "timeWeek": 1736,
+    "timeWeek": 1287,
     "timeMonth": 1522,
     "timeYear": 1522,
     "dailyMinutesDown": {}
@@ -187,7 +187,7 @@
     "uptimeYear": "100.00%",
     "time": 1003,
     "timeDay": 985,
-    "timeWeek": 1290,
+    "timeWeek": 787,
     "timeMonth": 1003,
     "timeYear": 1003,
     "dailyMinutesDown": {}
@@ -205,7 +205,7 @@
     "uptimeYear": "100.00%",
     "time": 828,
     "timeDay": 449,
-    "timeWeek": 987,
+    "timeWeek": 447,
     "timeMonth": 828,
     "timeYear": 828,
     "dailyMinutesDown": {}
@@ -223,7 +223,7 @@
     "uptimeYear": "100.00%",
     "time": 685,
     "timeDay": 295,
-    "timeWeek": 896,
+    "timeWeek": 336,
     "timeMonth": 685,
     "timeYear": 685,
     "dailyMinutesDown": {}
@@ -233,17 +233,17 @@
     "url": "https://barn.api.cow.fi/avalanche/api/v1/quote",
     "icon": "https://icons.duckduckgo.com/ip3/barn.api.cow.fi.ico",
     "slug": "barn-quote-api-avalanche",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 760,
-    "timeDay": 321,
-    "timeWeek": 706,
-    "timeMonth": 760,
-    "timeYear": 760,
+    "time": 757,
+    "timeDay": 524,
+    "timeWeek": 448,
+    "timeMonth": 757,
+    "timeYear": 757,
     "dailyMinutesDown": {}
   },
   {
@@ -259,7 +259,7 @@
     "uptimeYear": "100.00%",
     "time": 956,
     "timeDay": 646,
-    "timeWeek": 1077,
+    "timeWeek": 543,
     "timeMonth": 956,
     "timeYear": 956,
     "dailyMinutesDown": {}
@@ -277,7 +277,7 @@
     "uptimeYear": "100.00%",
     "time": 776,
     "timeDay": 499,
-    "timeWeek": 1019,
+    "timeWeek": 464,
     "timeMonth": 776,
     "timeYear": 776,
     "dailyMinutesDown": {}
@@ -295,7 +295,7 @@
     "uptimeYear": "100.00%",
     "time": 822,
     "timeDay": 708,
-    "timeWeek": 1038,
+    "timeWeek": 503,
     "timeMonth": 822,
     "timeYear": 822,
     "dailyMinutesDown": {}
@@ -313,7 +313,7 @@
     "uptimeYear": "100.00%",
     "time": 842,
     "timeDay": 502,
-    "timeWeek": 989,
+    "timeWeek": 450,
     "timeMonth": 842,
     "timeYear": 842,
     "dailyMinutesDown": {}
