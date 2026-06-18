@@ -1,7 +1,7 @@
 url: https://barn.api.cow.fi/avalanche/api/v1/quote
-status: up
-code: 200
-responseTime: 894
-lastUpdated: 2026-06-18T01:22:32.978Z
+status: down
+code: 404
+responseTime: 450
+lastUpdated: 2026-06-18T16:13:09.333Z
 startTime: 2026-05-29T13:12:15.477Z
 generator: Upptime <https://github.com/upptime/upptime>
