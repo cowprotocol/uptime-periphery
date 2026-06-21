@@ -13,7 +13,7 @@
     "time": 957,
     "timeDay": 391,
     "timeWeek": 415,
-    "timeMonth": 382,
+    "timeMonth": 384,
     "timeYear": 957,
     "dailyMinutesDown": {
       "2025-11-07": 69,
@@ -40,7 +40,7 @@
     "time": 3272,
     "timeDay": 993,
     "timeWeek": 630,
-    "timeMonth": 862,
+    "timeMonth": 876,
     "timeYear": 3272,
     "dailyMinutesDown": {
       "2025-11-05": 35,
@@ -93,7 +93,7 @@
     "time": 452,
     "timeDay": 477,
     "timeWeek": 309,
-    "timeMonth": 340,
+    "timeMonth": 341,
     "timeYear": 452,
     "dailyMinutesDown": {
       "2025-11-18": 115
@@ -113,7 +113,7 @@
     "time": 430,
     "timeDay": 530,
     "timeWeek": 441,
-    "timeMonth": 459,
+    "timeMonth": 464,
     "timeYear": 430,
     "dailyMinutesDown": {
       "2025-11-07": 21,
@@ -233,17 +233,17 @@
     "url": "https://barn.api.cow.fi/avalanche/api/v1/quote",
     "icon": "https://icons.duckduckgo.com/ip3/barn.api.cow.fi.ico",
     "slug": "barn-quote-api-avalanche",
-    "status": "down",
+    "status": "up",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 649,
-    "timeDay": 529,
-    "timeWeek": 592,
-    "timeMonth": 649,
-    "timeYear": 649,
+    "time": 651,
+    "timeDay": 551,
+    "timeWeek": 599,
+    "timeMonth": 651,
+    "timeYear": 651,
     "dailyMinutesDown": {}
   },
   {
