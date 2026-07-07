@@ -1,7 +1,7 @@
-url: https://debug.cow.fi/api/health
+url: https://debug.cow.fi/
 status: up
-code: 200
-responseTime: 427
-lastUpdated: 2026-07-06T23:26:26.318Z
+code: 401
+responseTime: 420
+lastUpdated: 2026-07-07T11:42:09.270Z
 startTime: 2026-05-29T13:11:56.684Z
 generator: Upptime <https://github.com/upptime/upptime>
