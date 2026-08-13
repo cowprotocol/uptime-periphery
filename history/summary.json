@@ -305,7 +305,7 @@
     "url": "https://barn.api.cow.fi/bnb/api/v1/quote",
     "icon": "https://icons.duckduckgo.com/ip3/barn.api.cow.fi.ico",
     "slug": "barn-quote-api-bnb",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
