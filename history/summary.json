@@ -84,17 +84,17 @@
     "url": "https://backend.bungee.exchange/api/v1/bungee-manual/dest-tokens?toChainId=42161&includeBridges=across%2Ccctp%2Cgnosis-native-bridge&fromChainId=1",
     "icon": "https://img.notionusercontent.com/s3/prod-files-secure%2F3ff6c9ca-a668-43fc-b125-7cac785409a3%2Fbefa5cd6-8537-43ee-868a-796111e9bfcb%2Fnew_(10).png/size/w=250?exp=1762607758&sig=nkhKAvPK1rpH7I4BZ5et6sSbNYSr4ZYm67KaZhK98S4&id=185818fd-2858-80d8-8fcc-d82b3b4adbf4&table=block",
     "slug": "bridging-bungee-get-tokens",
-    "status": "up",
+    "status": "down",
     "uptime": "99.97%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.97%",
-    "time": 442,
-    "timeDay": 130,
-    "timeWeek": 398,
-    "timeMonth": 432,
-    "timeYear": 442,
+    "time": 441,
+    "timeDay": 104,
+    "timeWeek": 358,
+    "timeMonth": 421,
+    "timeYear": 441,
     "dailyMinutesDown": {
       "2025-11-18": 115
     }
@@ -331,7 +331,7 @@
     "uptimeYear": "100.00%",
     "time": 569,
     "timeDay": 647,
-    "timeWeek": 562,
+    "timeWeek": 561,
     "timeMonth": 548,
     "timeYear": 569,
     "dailyMinutesDown": {}
@@ -349,7 +349,7 @@
     "uptimeYear": "100.00%",
     "time": 597,
     "timeDay": 399,
-    "timeWeek": 687,
+    "timeWeek": 672,
     "timeMonth": 608,
     "timeYear": 597,
     "dailyMinutesDown": {}
