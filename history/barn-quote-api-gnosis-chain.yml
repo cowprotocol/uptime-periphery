@@ -1,7 +1,7 @@
 url: https://barn.api.cow.fi/xdai/api/v1/quote
-status: down
-code: 404
-responseTime: 4044
-lastUpdated: 2026-09-11T16:18:15.355Z
+status: up
+code: 200
+responseTime: 523
+lastUpdated: 2026-09-11T16:31:17.678Z
 startTime: 2026-05-29T13:12:13.062Z
 generator: Upptime <https://github.com/upptime/upptime>
