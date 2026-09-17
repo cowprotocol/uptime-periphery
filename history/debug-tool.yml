@@ -1,7 +1,7 @@
 url: https://debug.cow.fi/
-status: up
-code: 401
-responseTime: 684
-lastUpdated: 2026-09-17T15:35:08.747Z
+status: down
+code: 200
+responseTime: 492
+lastUpdated: 2026-09-17T18:47:08.755Z
 startTime: 2026-05-29T13:11:56.684Z
 generator: Upptime <https://github.com/upptime/upptime>
