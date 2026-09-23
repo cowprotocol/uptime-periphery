@@ -323,7 +323,7 @@
     "url": "https://barn.api.cow.fi/linea/api/v1/quote",
     "icon": "https://icons.duckduckgo.com/ip3/barn.api.cow.fi.ico",
     "slug": "barn-quote-api-linea",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
@@ -331,7 +331,7 @@
     "uptimeYear": "100.00%",
     "time": 543,
     "timeDay": 414,
-    "timeWeek": 491,
+    "timeWeek": 490,
     "timeMonth": 517,
     "timeYear": 543,
     "dailyMinutesDown": {}
