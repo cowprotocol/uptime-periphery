@@ -205,7 +205,7 @@
     "uptimeYear": "100.00%",
     "time": 3697,
     "timeDay": 4048,
-    "timeWeek": 3724,
+    "timeWeek": 3887,
     "timeMonth": 3979,
     "timeYear": 3697,
     "dailyMinutesDown": {}
@@ -223,7 +223,7 @@
     "uptimeYear": "100.00%",
     "time": 666,
     "timeDay": 711,
-    "timeWeek": 721,
+    "timeWeek": 715,
     "timeMonth": 719,
     "timeYear": 666,
     "dailyMinutesDown": {}
@@ -241,7 +241,7 @@
     "uptimeYear": "100.00%",
     "time": 1970,
     "timeDay": 2306,
-    "timeWeek": 2847,
+    "timeWeek": 2878,
     "timeMonth": 3373,
     "timeYear": 1970,
     "dailyMinutesDown": {}
@@ -259,7 +259,7 @@
     "uptimeYear": "100.00%",
     "time": 997,
     "timeDay": 494,
-    "timeWeek": 1351,
+    "timeWeek": 1192,
     "timeMonth": 1199,
     "timeYear": 997,
     "dailyMinutesDown": {}
@@ -277,7 +277,7 @@
     "uptimeYear": "100.00%",
     "time": 690,
     "timeDay": 436,
-    "timeWeek": 731,
+    "timeWeek": 623,
     "timeMonth": 856,
     "timeYear": 690,
     "dailyMinutesDown": {}
@@ -295,7 +295,7 @@
     "uptimeYear": "100.00%",
     "time": 698,
     "timeDay": 443,
-    "timeWeek": 431,
+    "timeWeek": 398,
     "timeMonth": 573,
     "timeYear": 698,
     "dailyMinutesDown": {}
@@ -313,7 +313,7 @@
     "uptimeYear": "100.00%",
     "time": 853,
     "timeDay": 936,
-    "timeWeek": 1462,
+    "timeWeek": 1236,
     "timeMonth": 1101,
     "timeYear": 853,
     "dailyMinutesDown": {}
@@ -323,17 +323,17 @@
     "url": "https://barn.api.cow.fi/linea/api/v1/quote",
     "icon": "https://icons.duckduckgo.com/ip3/barn.api.cow.fi.ico",
     "slug": "barn-quote-api-linea",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 539,
-    "timeDay": 402,
-    "timeWeek": 477,
-    "timeMonth": 511,
-    "timeYear": 539,
+    "time": 540,
+    "timeDay": 421,
+    "timeWeek": 481,
+    "timeMonth": 512,
+    "timeYear": 540,
     "dailyMinutesDown": {}
   },
   {
@@ -349,7 +349,7 @@
     "uptimeYear": "100.00%",
     "time": 698,
     "timeDay": 1353,
-    "timeWeek": 1610,
+    "timeWeek": 1562,
     "timeMonth": 863,
     "timeYear": 698,
     "dailyMinutesDown": {}
