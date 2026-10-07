@@ -1,7 +1,7 @@
 url: https://barn.api.cow.fi/mainnet/api/v1/quote
-status: down
-code: 404
-responseTime: 3974
-lastUpdated: 2026-10-07T10:49:36.392Z
+status: up
+code: 200
+responseTime: 4166
+lastUpdated: 2026-10-07T12:48:55.796Z
 startTime: 2026-05-29T13:12:11.779Z
 generator: Upptime <https://github.com/upptime/upptime>
