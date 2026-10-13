@@ -1,7 +1,7 @@
 url: https://barn.api.cow.fi/polygon/api/v1/quote
-status: up
-code: 200
-responseTime: 434
-lastUpdated: 2026-10-12T23:10:46.327Z
+status: down
+code: 500
+responseTime: 653
+lastUpdated: 2026-10-13T17:20:56.921Z
 startTime: 2026-05-29T13:12:16.643Z
 generator: Upptime <https://github.com/upptime/upptime>
