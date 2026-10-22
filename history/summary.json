@@ -39,7 +39,7 @@
     "uptimeYear": "99.17%",
     "time": 3179,
     "timeDay": 605,
-    "timeWeek": 6811,
+    "timeWeek": 5915,
     "timeMonth": 3719,
     "timeYear": 3179,
     "dailyMinutesDown": {
@@ -223,7 +223,7 @@
     "uptimeYear": "100.00%",
     "time": 647,
     "timeDay": 463,
-    "timeWeek": 795,
+    "timeWeek": 510,
     "timeMonth": 578,
     "timeYear": 647,
     "dailyMinutesDown": {}
@@ -241,7 +241,7 @@
     "uptimeYear": "100.00%",
     "time": 2056,
     "timeDay": 3720,
-    "timeWeek": 3105,
+    "timeWeek": 3346,
     "timeMonth": 2408,
     "timeYear": 2056,
     "dailyMinutesDown": {}
@@ -277,7 +277,7 @@
     "uptimeYear": "100.00%",
     "time": 712,
     "timeDay": 608,
-    "timeWeek": 1585,
+    "timeWeek": 1834,
     "timeMonth": 833,
     "timeYear": 712,
     "dailyMinutesDown": {}
@@ -295,7 +295,7 @@
     "uptimeYear": "100.00%",
     "time": 639,
     "timeDay": 366,
-    "timeWeek": 423,
+    "timeWeek": 411,
     "timeMonth": 386,
     "timeYear": 639,
     "dailyMinutesDown": {}
@@ -313,7 +313,7 @@
     "uptimeYear": "100.00%",
     "time": 873,
     "timeDay": 1459,
-    "timeWeek": 1002,
+    "timeWeek": 1060,
     "timeMonth": 962,
     "timeYear": 873,
     "dailyMinutesDown": {}
@@ -323,17 +323,17 @@
     "url": "https://barn.api.cow.fi/linea/api/v1/quote",
     "icon": "https://icons.duckduckgo.com/ip3/barn.api.cow.fi.ico",
     "slug": "barn-quote-api-linea",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 505,
-    "timeDay": 488,
-    "timeWeek": 434,
-    "timeMonth": 424,
-    "timeYear": 505,
+    "time": 504,
+    "timeDay": 459,
+    "timeWeek": 425,
+    "timeMonth": 422,
+    "timeYear": 504,
     "dailyMinutesDown": {}
   },
   {
@@ -511,7 +511,7 @@
     "uptimeYear": "100.00%",
     "time": 534,
     "timeDay": 536,
-    "timeWeek": 554,
+    "timeWeek": 553,
     "timeMonth": 521,
     "timeYear": 534,
     "dailyMinutesDown": {}
