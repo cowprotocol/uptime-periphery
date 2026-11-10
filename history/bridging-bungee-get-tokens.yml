@@ -1,7 +1,7 @@
 url: https://backend.bungee.exchange/api/v1/bungee-manual/dest-tokens?toChainId=42161&includeBridges=across%2Ccctp%2Cgnosis-native-bridge&fromChainId=1
 status: down
 code: 400
-responseTime: 402
-lastUpdated: 2026-11-09T23:05:20.508Z
+responseTime: 348
+lastUpdated: 2026-11-10T23:05:11.233Z
 startTime: 2025-11-07T15:55:27.704Z
 generator: Upptime <https://github.com/upptime/upptime>
