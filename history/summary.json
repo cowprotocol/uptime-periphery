@@ -348,6 +348,24 @@
     "dailyMinutesDown": {}
   },
   {
+    "name": "Barn Quote API Robinhood",
+    "url": "https://barn.api.cow.fi/robinhood/api/v1/quote",
+    "icon": "https://icons.duckduckgo.com/ip3/barn.api.cow.fi.ico",
+    "slug": "barn-quote-api-robinhood",
+    "status": "up",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 0,
+    "timeDay": 0,
+    "timeWeek": 0,
+    "timeMonth": 0,
+    "timeYear": 0,
+    "dailyMinutesDown": {}
+  },
+  {
     "name": "Barn BFF - Slippage Tolerance (mainnet)",
     "url": "https://bff.barn.cow.fi/1/markets/0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB-0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/slippageTolerance",
     "icon": "https://icons.duckduckgo.com/ip3/bff.barn.cow.fi.ico",
